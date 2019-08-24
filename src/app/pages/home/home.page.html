@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Home Page</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let category of allCategories | async" routerLink="/app/tabs/categories/category-details/{{category.id}}">
+        <div>{{category.name}}</div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

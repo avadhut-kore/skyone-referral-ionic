@@ -1,5 +1,7 @@
 {
   "name": "skyone-referral-ionic",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

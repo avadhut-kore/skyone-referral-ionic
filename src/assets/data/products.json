@@ -1,0 +1,32 @@
+[
+    {
+        "id": "1",
+        "name": "Personal Loan",
+        "description": "",
+        "categoryId": "1"
+    },
+    {
+        "id": "2",
+        "name": "Home Loan",
+        "description": "",
+        "categoryId": "1"
+    },
+    {
+        "id": "3",
+        "name": "Loan Against Property",
+        "description": "",
+        "categoryId": "1"
+    },
+    {
+        "id": "4",
+        "name": "Car Loan",
+        "description": "",
+        "categoryId": "1"
+    },
+    {
+        "id": "5",
+        "name": "Business Loan",
+        "description": "",
+        "categoryId": "1"
+    }
+]

@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>category-list</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- <tr *ngFor="let category of allCategories | async">
+    <td class="tbl2">{{employee.EmpName}}</td>
+    <td class="tbl2">{{employee.DateOfBirth | date }}</td>
+    <td class="tbl2">{{employee.EmailId}}</td>
+    <td class="tbl2">{{employee.Gender ==0? 'Male' : 'Female'}}</td>
+    <td class="tbl2">{{employee.Address}}</td>
+    <td class="tbl2">{{employee.PinCode}}</td>
+    <td class="tbl2">
+      <button type="button" class="btn btn-info" matTooltip="Click Edit Button"
+        (click)="loadEmployeeToEdit(employee.EmpId)">Edit</button>
+    </td>
+    <td class="tbl2">
+      <button type="button" class="btn btn-danger" matTooltip="Click Delete Button"
+        (click)="deleteEmployee(employee.EmpId)">Delete</button>
+    </td>
+  </tr> -->
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md>
+        Loans
+      </ion-col>
+      <ion-col size="12" size-md>
+        Insurance
+      </ion-col>
+      <ion-col size="12" size-md>
+        Jobs
+      </ion-col>
+      <ion-col size="12" size-md>
+        Real Estate
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" size-md>
+        Hotels
+      </ion-col>
+      <ion-col size="12" size-md>
+        Schools
+      </ion-col>
+      <ion-col size="12" size-md>
+        Coaching
+      </ion-col>
+      <ion-col size="12" size-md>
+        Cab Service
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

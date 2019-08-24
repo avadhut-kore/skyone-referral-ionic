@@ -1,0 +1,42 @@
+[
+    {
+        "id": "1",
+        "name": "Loans",
+        "description": ""
+    },
+    {
+        "id": "2",
+        "name": "Jobs",
+        "description": ""
+    },
+    {
+        "id": "3",
+        "name": "Insurance",
+        "description": ""
+    },
+    {
+        "id": "4",
+        "name": "Real Estate",
+        "description": ""
+    },
+    {
+        "id": "5",
+        "name": "Hotels & Resorts",
+        "description": ""
+    },
+    {
+        "id": "6",
+        "name": "Schools",
+        "description": ""
+    },
+    {
+        "id": "7",
+        "name": "Colleges",
+        "description": ""
+    },
+    {
+        "id": "8",
+        "name": "Coaching",
+        "description": ""
+    }
+]

@@ -1,0 +1,76 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>{{category.name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let product of category.products | async"
+        routerLink="/app/tabs/products/product-details/{{product.id}}">
+        <div>{{product.name}}</div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content> -->
+
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-title>{{category?.name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <form [formGroup]="submitReferralForm" (ngSubmit)="onSubmit()">
+    <ion-list lines="full" class="ion-no-margin ion-no-padding">
+      <ion-item>
+        <ion-label position="stacked">Type</ion-label>
+        <ion-select formControlName="productId">
+          <ion-select-option *ngFor="let product of category?.products; let idx = index" value="{{product.id}}" selected="{{(idx==0).toString()}}">
+            {{product.name}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">First Name <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input formControlName="firstName" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Last Name <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input formControlName="lastName" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Mobile Number <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input formControlName="mobileNumber" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Email Id <ion-text color="warning">(Optional)</ion-text>
+        </ion-label>
+        <ion-input formControlName="emailId" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">City <ion-text color="warning">(Optional)</ion-text>
+        </ion-label>
+        <ion-input formControlName="city" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Notes</ion-label>
+        <ion-textarea formControlName="notes"></ion-textarea>
+      </ion-item>
+    </ion-list>
+
+    <div class="ion-padding">
+      <ion-button expand="block" type="submit" [disabled]="!submitReferralForm.valid" class="ion-no-margin">Submit your referral</ion-button>
+    </div>
+  </form>
+</ion-content>
+<!-- <ion-alert-controller></ion-alert-controller> -->
