@@ -46,6 +46,19 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'referrals',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../referral-list/referral-list.module').then(m => m.ReferralListPageModule)
+          },
+          {
+            path: 'referral-details/:referralId',
+            loadChildren: () => import('../referral-detail/referral-detail.module').then(m => m.ReferralDetailPageModule)
+          }
+        ]
+      },
+      {
         path: 'speakers',
         children: [
           {

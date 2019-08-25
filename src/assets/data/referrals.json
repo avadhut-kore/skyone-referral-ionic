@@ -1,0 +1,42 @@
+[
+    {
+        "id": "1",
+        "firstName": "Avadhut",
+        "lastName": "Kore",
+        "mobileNumber": "9764613084",
+        "city": "Pune",
+        "emailId": "amkore01@gmail.com",
+        "notes": "",
+        "productId": "1"
+    },
+    {
+        "id": "1",
+        "firstName": "Amit",
+        "lastName": "Takle",
+        "mobileNumber": "9764613085",
+        "city": "Pune",
+        "emailId": "at@gmail.com",
+        "notes": "",
+        "productId": "2"
+    },
+    {
+        "id": "1",
+        "firstName": "Prasad",
+        "lastName": "Bugad",
+        "mobileNumber": "9764613086",
+        "city": "Mumbai",
+        "emailId": "pb@gmail.com",
+        "notes": "Need quick loan",
+        "productId": "3"
+    },
+    {
+        "id": "1",
+        "firstName": "Ashish",
+        "lastName": "patil",
+        "mobileNumber": "9764613087",
+        "city": "Pune",
+        "emailId": "ap@gmail.com",
+        "notes": "",
+        "productId": "4"
+    }
+]

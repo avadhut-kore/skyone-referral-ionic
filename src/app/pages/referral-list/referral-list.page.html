@@ -1,9 +1,24 @@
-<ion-header>
+<ion-header translucent>
   <ion-toolbar>
     <ion-title>referral-list</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content fullscreen>
+  <ion-list>
+    <ion-list-header>
+      Your Referrals
+    </ion-list-header>
 
+    <ion-item *ngFor="let referral of allReferrals | async" routerLink="/app/tabs/referrals/referral-details/{{referral.id}}">
+      <!-- <ion-avatar slot="start">
+        <img src="./avatar-finn.png">
+      </ion-avatar> -->
+      <ion-label>
+        <h2>{{referral.firstName}} {{referral.lastName}}</h2>
+        <h3>{{referral.productId}}</h3>
+        <p>{{referral.city}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>

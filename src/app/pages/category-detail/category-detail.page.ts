@@ -3,8 +3,11 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { CategoryService } from 'src/app/services/category.service';
 import { Category } from 'src/app/interfaces/category';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, NgForm } from '@angular/forms';
 import { ProductService } from 'src/app/services/product.service';
+import { LoadingController, AlertController } from '@ionic/angular';
+import { ReferralService } from 'src/app/services/referral.service';
+import { Referral } from 'src/app/interfaces/Referral';
 
 @Component({
   selector: 'app-category-detail',
@@ -19,16 +22,19 @@ export class CategoryDetailPage implements OnInit {
 
   firstName: any;
   lastName: any;
-  submitReferralForm: FormGroup;
+  referralForm: FormGroup;
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private productService: ProductService,
     private categoryService: CategoryService,
-    public formBuilder: FormBuilder) {
+    private referralService: ReferralService,
+    public formBuilder: FormBuilder,
+    public loadingController: LoadingController,
+    public alertController: AlertController) {
 
-    this.submitReferralForm = formBuilder.group({
+    this.referralForm = formBuilder.group({
       firstName: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
       lastName: ['', Validators.required],
       mobileNumber: ['', Validators.required],
@@ -62,8 +68,26 @@ export class CategoryDetailPage implements OnInit {
 
   onSubmit() {
     // TODO: Use EventEmitter with form value
-    console.warn(this.submitReferralForm.value);
-    // this.router.navigateByUrl('/app/tabs/home');
-    this.submitReferralForm.reset();
+    console.warn(this.referralForm.value);
+    this.router.navigateByUrl('/app/tabs/referrals');
+    // this.submitReferralForm.reset();
+  }
+
+  async onFormSubmit(form: NgForm) {    
+    const loading = await this.loadingController.create({
+      message: 'Loading...'
+    });
+    await loading.present();
+    await this.referralService.addReferral(form)
+      .subscribe(res => {
+        // let id = res['id'];
+        console.log('success');
+        loading.dismiss();
+        console.log(this.router);
+        // this.router.navigate([{ outlets: { details: id } }], { relativeTo: this.route.parent });
+      }, (err) => {
+        console.log(err);
+        loading.dismiss();
+      });
   }
 }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Referral } from 'src/app/interfaces/Referral';
+import { ReferralService } from 'src/app/services/referral.service';
 
 @Component({
   selector: 'app-referral-list',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReferralListPage implements OnInit {
 
-  constructor() { }
+  allReferrals: Observable<Referral[]>;
+  userId: string;
+
+  constructor(private referralService: ReferralService) { }
 
   ngOnInit() {
+    this.userId = "1";
+    this.loadAllReferralsOfUser(this.userId);
   }
 
+  loadAllReferralsOfUser(userId: string) {
+    this.allReferrals = this.referralService.getReferralsByUser(userId);
+  }
 }

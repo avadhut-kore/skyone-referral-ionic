@@ -14,15 +14,18 @@
     </ion-row>
   </ion-grid>
 </ion-content> -->
-
-<ion-header translucent>
+<ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button>
+      </ion-back-button>
+    </ion-buttons>
     <ion-title>{{category?.name}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content fullscreen>
-  <form [formGroup]="submitReferralForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="referralForm" (ngSubmit)="onFormSubmit(referralForm.value)">
     <ion-list lines="full" class="ion-no-margin ion-no-padding">
       <ion-item>
         <ion-label position="stacked">Select Type</ion-label>
@@ -71,7 +74,7 @@
     </ion-list>
 
     <div class="ion-padding">
-      <ion-button expand="block" type="submit" [disabled]="!submitReferralForm.valid" class="ion-no-margin">Submit your
+      <ion-button expand="block" type="submit" [disabled]="!referralForm.valid" class="ion-no-margin">Submit your
         referral</ion-button>
     </div>
   </form>

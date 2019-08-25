@@ -10,7 +10,7 @@ import { CategoryService } from 'src/app/services/category.service';
 })
 export class CategoryListPage implements OnInit {
 
-  allEmployees: Observable<Category[]>;
+  allCategories: Observable<Category[]>;
 
   constructor(private categoryService: CategoryService) { }
 
@@ -19,7 +19,7 @@ export class CategoryListPage implements OnInit {
   }
 
   loadAllCategories() {
-    this.allEmployees = this.categoryService.getAllCategories();
+    this.allCategories = this.categoryService.getAllCategories();
   }
 
 }
