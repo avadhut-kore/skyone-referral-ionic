@@ -25,9 +25,10 @@
   <form [formGroup]="submitReferralForm" (ngSubmit)="onSubmit()">
     <ion-list lines="full" class="ion-no-margin ion-no-padding">
       <ion-item>
-        <ion-label position="stacked">Type</ion-label>
+        <ion-label position="stacked">Select Type</ion-label>
         <ion-select formControlName="productId">
-          <ion-select-option *ngFor="let product of category?.products; let idx = index" value="{{product.id}}" selected="{{(idx==0).toString()}}">
+          <ion-select-option *ngFor="let product of category?.products; let idx = index" value="{{product.id}}"
+            selected="{{(idx==0).toString()}}">
             {{product.name}}</ion-select-option>
         </ion-select>
       </ion-item>
@@ -63,13 +64,15 @@
       </ion-item>
 
       <ion-item>
-        <ion-label position="stacked">Notes</ion-label>
+        <ion-label position="stacked">Notes <ion-text color="warning">(Optional)</ion-text>
+        </ion-label>
         <ion-textarea formControlName="notes"></ion-textarea>
       </ion-item>
     </ion-list>
 
     <div class="ion-padding">
-      <ion-button expand="block" type="submit" [disabled]="!submitReferralForm.valid" class="ion-no-margin">Submit your referral</ion-button>
+      <ion-button expand="block" type="submit" [disabled]="!submitReferralForm.valid" class="ion-no-margin">Submit your
+        referral</ion-button>
     </div>
   </form>
 </ion-content>

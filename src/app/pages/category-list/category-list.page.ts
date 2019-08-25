@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Category } from 'src/app/interfaces/category';
 import { Observable } from 'rxjs';
-import { CategoryService } from 'src/app/api/category.service';
+import { CategoryService } from 'src/app/services/category.service';
 
 @Component({
   selector: 'app-category-list',
@@ -18,7 +18,7 @@ export class CategoryListPage implements OnInit {
     // this.loadAllCategories();
   }
 
-  loadAllCategories() {  
+  loadAllCategories() {
     this.allEmployees = this.categoryService.getAllCategories();
   }
 

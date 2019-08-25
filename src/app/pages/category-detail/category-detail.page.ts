@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ProductService } from 'src/app/api/product.service';
-// import { Product } from 'src/app/interfaces/product';
 import { Observable } from 'rxjs';
-import { CategoryService } from 'src/app/api/category.service';
+import { CategoryService } from 'src/app/services/category.service';
 import { Category } from 'src/app/interfaces/category';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-category-detail',
